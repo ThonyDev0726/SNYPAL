@@ -22,8 +22,8 @@ public class ENVIO_MAIL {
     public ENVIO_MAIL() {
         mProperties = new Properties();
     }
-    private static String emailFrom = "richardanto0726@gmail.com";
-    private static String passwordFrom = "wfaqmigzzqltomff";
+    private static String emailFrom = "canarianflyke@gmail.com";
+    private static String passwordFrom = "pflifzufmhkschuu";
     private String emailTo;
     private String subject;
 //    private String content;
@@ -34,13 +34,13 @@ public class ENVIO_MAIL {
 
     public void crearEmail(
             String empresa,
-            String destinatarioEmail, 
-            String asunto, 
-            String operacion, 
-            String nomApe, 
-            String usuario, 
+            String destinatarioEmail,
+            String asunto,
+            String operacion,
+            String nomApe,
+            String usuario,
             String clave
-            ) {
+    ) {
         emailTo = destinatarioEmail;
         subject = asunto;
 //        content = mensaje;
@@ -57,7 +57,7 @@ public class ENVIO_MAIL {
 
         try {
             mCorreo = new MimeMessage(mSession);
-            mCorreo.setFrom(new InternetAddress(emailFrom,empresa));
+            mCorreo.setFrom(new InternetAddress(emailFrom, empresa));
             mCorreo.setRecipient(Message.RecipientType.TO, new InternetAddress(emailTo));
             mCorreo.setSubject(subject);
 //            mCorreo.setText(content, "ISO-8859-1", "html");
@@ -75,7 +75,7 @@ public class ENVIO_MAIL {
                     + "	width:20rem;\n"
                     + "	text-shadow:0px 1px 0px #2f6627;"
                     + "\">"
-                    + "<center>"                    
+                    + "<center>"
                     + "<h2 style=\""
                     + "	color:#000;\n"
                     + "\"> "
