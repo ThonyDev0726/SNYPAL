@@ -12,7 +12,7 @@ public class CONEXION {
 
     public static Connection getConexion() {
         Connection cn = null;
-        String DATA_BASE = "ecommerce";
+        String DATA_BASE = "SNYPAL";
         String USER = "root";
         String HOST_NUBE = "node117970-env-8974925.jelastic.saveincloud.net";
         String HOST = "localhost";
