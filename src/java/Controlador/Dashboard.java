@@ -20,6 +20,10 @@ public class Dashboard extends HttpServlet {
     String DASHBOARD_ADMINISTRADOR = "Vista/Administrador/dashboard.jsp";
     String DASHBOARD_CLIENTE = "Vista/Cliente/dashboard.jsp";
     String CLIENTE_PERFIL = "Vista/Cliente/perfil.jsp";
+    String CLIENTE_TODAS = "Vista/Cliente/todas.jsp";
+    String CLIENTE_PENDIENTES = "Vista/Cliente/perfil.jsp";
+    String CLIENTE_EJECUCION = "Vista/Cliente/perfil.jsp";
+    String CLIENTE_REALIZADAS = "Vista/Cliente/perfil.jsp";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -77,6 +81,18 @@ public class Dashboard extends HttpServlet {
                         break;
                     case "cliente_perfil":
                         acceso = CLIENTE_PERFIL;
+                        break;
+                    case "todas":
+                        acceso = CLIENTE_TODAS;
+                        break;
+                    case "en_ejecucion":
+                        acceso = CLIENTE_EJECUCION;
+                        break;
+                    case "pendientes":
+                        acceso = CLIENTE_PENDIENTES;
+                        break;
+                    case "realizadas":
+                        acceso = CLIENTE_REALIZADAS;
                         break;
                     default:
                         acceso = LOGIN;

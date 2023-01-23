@@ -55,7 +55,7 @@ public class RegistroUsuario extends HttpServlet {
     public String DAT_DIRECCION = "N/A";
     public String DAT_CIUDAD = "N/A";
     public String DAT_PAIS = "N/A";
-    public String DAT_POSTAL = "N/A";
+    public String DAT_POSTAL = "170702";
 
     public RegistroUsuario() {
         super();

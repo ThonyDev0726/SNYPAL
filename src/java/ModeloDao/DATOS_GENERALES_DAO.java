@@ -29,7 +29,7 @@ public class DATOS_GENERALES_DAO implements CRUD_DATOS_GENERALES {
     String LISTAR = "CALL SELECT_ALL_USUARIO()";
     String LISTAR_ID = "CALL SELECT_DATO_USUARIO_ID(?)";
     String CREAR = "CALL INSERT_DATOS_GENERALES(?,?,?,?,?,?,?,?,?)";
-    String ACTUALIZAR = "CALL UPDATE_USUARIO(?,?,?,?,?)";
+    String ACTUALIZAR = "CALL UPDATE_DATA_USU(?,?,?,?,?,?)";
     String ACTUALIZAR_ESTADO = "CALL UPDATE_USUARIO_ESTADO(?,?)";
     String ELIMINAR = "CALL DELETE_USUARIO(?)";
 
@@ -106,7 +106,22 @@ public class DATOS_GENERALES_DAO implements CRUD_DATOS_GENERALES {
 
     @Override
     public String update(DATOS_GENERALES mp) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        try {
+            con = (Connection) cn.getConexion();
+            cs = con.prepareCall(ACTUALIZAR);
+            cs.setInt(1, mp.getFK_USUARIO());
+            cs.setString(2, mp.getDAT_TELEFONO());
+            cs.setString(3, mp.getDAT_CIUDAD());
+            cs.setString(4, mp.getDAT_PAIS());
+            cs.setString(5, mp.getDAT_POSTAL());
+            cs.setString(6, mp.getDAT_DIRECCION());
+            cs.execute();
+        } catch (SQLException ex) {
+            System.out.println("ERROR AL ACTUALIZAR LOS DATOS DEL USUARIO");
+            System.out.println(ex);
+            return "no se actualizo";
+        }
+        return "Se actualizaron con exito";
     }
 
     @Override
